@@ -3,7 +3,7 @@
 #include "conio.h"
 #include <stdlib.h>
 
-using namespace std;
+//using namespace std;
 
 #define SCREENSIZE 20
 #define SYMSIZE 8
@@ -152,22 +152,4 @@ void draw_Dot(uint8_t x, uint8_t y, uint8_t color)
 {
 	if (Screen[x][y] == 0)
 		Screen[x][y] = color;
-}
-
-
-
-void draw_verticalLine(uint8_t x, uint8_t y_right, uint8_t y_left, uint8_t color)
-{
-	for (uint8_t j = y_left + 1; j < y_right; j++)
-	{
-		draw_Dot(x, j, color);
-	}
-}
-
-void draw_hotisontalLine(uint8_t x_right, uint8_t x_left, uint8_t y, uint8_t color)
-{
-	for (uint8_t i = x_left; i <= x_right; i++)
-	{
-		draw_Dot(i, y, color);
-	}
 }

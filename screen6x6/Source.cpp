@@ -2,11 +2,17 @@
 
 void draw_Rectangle(uint8_t x_right, uint8_t y_right, uint8_t x_left, uint8_t y_left, uint8_t color)
 {
-	draw_hotisontalLine(x_right, x_left, y_right, color);
-	draw_hotisontalLine(x_right, x_left, y_left, color);
-	draw_verticalLine(x_right, y_right, y_left, color);
-	draw_verticalLine(x_left, y_right, y_left, color);
-	//view_Screen();
+	for (uint8_t j = y_left + 1; j < y_right; j++)
+	{
+		draw_Dot(x_left, j, color);
+		draw_Dot(x_right, j, color);
+	}
+
+	for (uint8_t i = x_left; i <= x_right; i++)
+	{
+		draw_Dot(i, y_right, color);
+		draw_Dot(i, y_left, color);
+	}
 }
 
 void draw_Symbol(const uint8_t symbol[SYMSIZE][SYMSIZE], uint8_t color, uint8_t x, uint8_t y)
